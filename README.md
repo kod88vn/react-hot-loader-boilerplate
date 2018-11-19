@@ -1,6 +1,8 @@
 # React Hot Loader 3.0 Boilerplate for Visual Studio Code
 
 A react boilerplate project for Visual Studio Code based on [react-transform-boilerplate](https://github.com/gaearon/react-transform-boilerplate) and [React Hot Loader 3.0](https://github.com/gaearon/react-hot-boilerplate/pull/61)
+***
+![](overview.gif)
 
 ## Features
 * Intellisense (code completion) for external libraries via [Automatic Type Acquisition (ATA)](https://code.visualstudio.com/updates/v1_7) 

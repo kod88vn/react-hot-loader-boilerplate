@@ -6,7 +6,7 @@
                 "type": "chrome",
                 "request": "launch",
                 "webRoot": "${workspaceRoot}",
-                "url": "http://localhost:8080", 
+                "url": "http://localhost:3000", 
                 "userDataDir": "${workspaceRoot}/.vscode/chrome",
                 "sourceMaps": true,
                 "preLaunchTask": "development",

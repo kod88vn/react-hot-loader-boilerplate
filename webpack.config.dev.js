@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     devtool: 'cheap-module-source-map',
@@ -12,12 +11,10 @@ module.exports = {
         './src/index.dev'
     ],
     output: {
-        path: path.join(__dirname, '/dist'),
-        filename: 'bundle.js',
+        path: path.join(__dirname, 'dist'),
+        filename: 'bundle.js'
     },
     plugins: [
-        new webpack.NamedModulesPlugin(),
-        new Dotenv(),
         new webpack.DefinePlugin({
             '__DEV__': true
         }),
@@ -30,21 +27,9 @@ module.exports = {
     ],
     module: {
         rules: [{
-            test: /\.js?$/,
-            exclude: /node_modules/, // add this line
+            test: /\.jsx?$/,
             use: [{
                 loader: 'babel-loader'
-            }]
-        }, {
-            test: /\.css$/,
-            use: [ 'style-loader', 'css-loader' ]
-        }, {
-            test: /\.(png|jpg|gif)$/i,
-            use: [{
-                loader: 'url-loader',
-                options: {
-                    limit: 8192
-                }
             }]
         }]
     },

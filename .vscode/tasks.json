@@ -18,14 +18,14 @@
 				"run",
 				"start",
 				"--silent",
-				"--react-hot-boilerplate-vscode:port=8080",
+				"--react-hot-boilerplate-vscode:port=3000",
 				"--react-hot-boilerplate-vscode:host=localhost" // use these command line args to override host and port of the dev-server. default values are defined in package.json config section.
 			],
 			"problemMatcher": [
 				{
 					"owner": "custom",
 					"pattern": {
-					  	"regexp": "____________"
+					  "regexp": "____________"
 					},
 					"watching": {
 						"activeOnStart": true,
