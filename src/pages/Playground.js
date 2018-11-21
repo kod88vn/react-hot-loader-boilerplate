@@ -1,6 +1,6 @@
 import React from 'react';
-import Counter from '../components/_shared/counter';
-import { NICE, SUPER_NICE } from '../components/_shared/colors';
+import Counter from '../components/_shared/Counter';
+import { NICE, SUPER_NICE } from '../components/_shared/Colors';
 
 const Playground = () => (
     <React.Fragment>
