@@ -9,7 +9,7 @@ const initialState = {};
 export const history = createBrowserHistory();
 
 const composeEnhancers =
-  (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+    (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
 const middleware = [
     routerMiddleware(history),

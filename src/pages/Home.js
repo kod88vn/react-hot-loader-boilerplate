@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Hello } from '../components/Hello';
+import Hello from '../components/Hello';
 
 const Home = () => (
     <React.Fragment>
-        React boilerplate and my little playground
+        <h4>React boilerplate and my little playground</h4>
         <Hello />
     </React.Fragment>
 );
