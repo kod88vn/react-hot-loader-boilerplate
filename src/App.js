@@ -3,16 +3,19 @@ import { Route, Link } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Playground from './pages/Playground';
+import RepoExplorer2 from './pages/RepoExplorer';
 
 const App = () => (
     <div>
         <header>
             <Link to="/">Home</Link>
             <Link to="/playground"> | Playground</Link>
+            <Link to="/repo-explorer"> | Repo Explorer</Link>
         </header>
         <main>
             <Route exact path="/" component={Home} />
             <Route exact path="/playground" component={Playground} />
+            <Route exact path="/repo-explorer" component={RepoExplorer2} />
         </main>
         
     </div>  

@@ -3,6 +3,8 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import thunk from 'redux-thunk';
 
+import { repos } from './reducers';
+
 const initialState = {};
 export const history = createBrowserHistory();
 
@@ -16,7 +18,8 @@ const middleware = [
 
 const store = createStore(
     combineReducers({
-        router: connectRouter(history)
+        router: connectRouter(history),
+        repos
     }),
     initialState,
     composeEnhancers(
