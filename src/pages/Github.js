@@ -1,5 +1,5 @@
 import React from 'react';
-import GithubExplorer from '../components/GithubExplorer';
+import GithubExplorer from '../components/github/GithubExplorer';
 
 const Github = () => (
     <GithubExplorer />

@@ -2,45 +2,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import map from 'lodash/map';
 
 import { getRepos } from 'actions';
-import InputDebounced from './_shared/InputDebounced';
+import InputDebounced from '../_shared/InputDebounced';
+import GithubRepos from './GithubRepos';
 
 class GithubExplorer extends Component {
-  state = {
-    username: 'kod88vn'
-  }
+  state = {};
+
   static propTypes = {
     getRepos: PropTypes.func,
     repos: PropTypes.array,
   };
 
-  componentDidMount() {
-    this.updateRepoList(this.state.username);
+  handleChange(username) {
+    this.setState({ username });
+    this.updateRepoList(this.state.username); 
   }
 
-  updateRepoList = (username) => this.props.getRepos(username);
+  updateRepoList(username) {
+    this.props.getRepos(username);
+  }
 
   render() {
+    const { repos } = this.props;
     return (
       <div>
         <h1>Github Explorer</h1>
         <strong>Github username: </strong>
         <InputDebounced
-          onChange={(value) => this.updateRepoList(value)}
+          onChange={(value) => this.handleChange(value)}
           placeholder="Github username..."
-          type="text"
-          value={this.state.username}/>
-        <ul>
-          {map(this.props.repos, (repo, index) => (
-            <li key={index}>
-              <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                {repo.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+          type="text" />
+        {(repos.length) ?
+          <GithubRepos {...{ repos }} /> : 
+          <div>No repos was found with given username</div>}
+        
       </div>
     );
   }

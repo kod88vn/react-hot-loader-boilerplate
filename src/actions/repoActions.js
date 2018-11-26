@@ -9,6 +9,12 @@ export const getRepos = username => async dispatch => {
   try {
     const url = `https://api.github.com/users/${username}/repos?sort=updated`;
     const response = await fetch(url);
+
+    if (!response.ok) {
+      dispatch(clearRepos());
+      return;
+    }
+
     const responseBody = await response.json();
     dispatch(addRepos(responseBody));
   } catch (error) {

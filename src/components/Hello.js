@@ -23,7 +23,9 @@ class Hello extends Component {
             <React.Fragment>
                 <h4>
                     <span>What is your name? </span>
-                    <InputDebounced onChange={(value) => this.handleChange(value)} placeholder="Fill your name here" />
+                    <InputDebounced
+                        onChange={(value) => this.handleChange(value)}
+                        placeholder="Fill your name here" />
                 </h4>
                 <h4>Hello {name}</h4>
             </React.Fragment>
